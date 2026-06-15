@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICU Airway Guardian Nexus</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-container">
+                <div class="pulse-ring"></div>
+                <h1>ICU <span>Guardian</span></h1>
+            </div>
+            <p>Advanced Tube Displacement AI Monitor</p>
+        </header>
+
+        <main>
+            <div class="upload-section" id="dropzone">
+                <div class="upload-icon">📁</div>
+                <h2>Upload DICOM Image</h2>
+                <p>Drag & drop or click to select a patient's X-Ray</p>
+                <input type="file" id="fileInput" accept=".dcm" hidden>
+            </div>
+
+            <div class="loader-container hidden" id="loader">
+                <div class="scanner"></div>
+                <p>AI Neural Network Analyzing Landmarks...</p>
+            </div>
+
+            <div class="results-container hidden" id="results">
+                <div class="status-panel" id="statusPanel">
+                    <h2 id="statusText">SAFE</h2>
+                    <div class="metrics">
+                        <div class="metric-box">
+                            <span>Confidence</span>
+                            <strong id="confidenceVal">99%</strong>
+                        </div>
+                        <div class="metric-box">
+                            <span>Distance</span>
+                            <strong id="distanceVal">45 px</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-panel">
+                    <img id="resultImage" src="" alt="Analyzed X-Ray">
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
